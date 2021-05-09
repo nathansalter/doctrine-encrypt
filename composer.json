@@ -1,0 +1,30 @@
+{
+  "name": "avidci/doctrine-encrypt",
+  "type": "library",
+  "description": "Simple Symfony bundle to Encrypt/Decrypt Doctrine variables",
+  "license": "LGPL-3.0-or-later",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "AvidCi\\Doctrine\\": ["src"]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AvidCiTests\\Doctrine\\": ["tests"]
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "doctrine/orm": "^2.9",
+    "paragonie/halite": "^4",
+    "symfony/property-access": "5.x-dev",
+    "symfony/console": "5.x-dev",
+    "symfony/http-kernel": "5.x-dev",
+    "symfony/dependency-injection": "5.x-dev",
+    "symfony/config": "5.x-dev"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5"
+  }
+}

@@ -1,0 +1,12 @@
+---
+services:
+  AvidCi\Doctrine\Factory\EncryptDecryptListenerFactory:
+    arguments:
+      $encryptionKey: 'env(default:notset:AVIDCI_ENCRYPTION_KEY)'
+
+  AvidCi\Doctrine\LifecycleListener\EncryptDecryptListener:
+    class: AvidCi\Doctrine\LifecycleListener\EncryptDecryptListener
+    factory: [AvidCi\Doctrine\Factory\EncryptDecryptListenerFactory, 'create']
+    tags:
+      - { name: 'doctrine.event_listener', event: 'preFlush' }
+      - { name: 'doctrine.event_listener', event: 'postLoad' }
